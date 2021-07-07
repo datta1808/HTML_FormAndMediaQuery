@@ -82,5 +82,24 @@
                 emailError.textContent = "";
                 else emailError.textContent = "Email is Incorrect";
             });
+
+            const tel = document.querySelector('#tel');
+            const telError = document.querySelector('.tel-error');
+            tel.addEventListener('input', function(){
+                let telRegex = RegExp('^[1-9]{1}[0-9]{1}[ ][1-9]{1}[0-9]{9}$');
+                if(telRegex.test(tel.value))
+                telError.textContent="";
+                else telError.textContent = "Phone number is Incorrect";
+            });
+
+            const password = document.querySelector('#pwd');
+            const passwordError = document.querySelector('.pwd-error');
+            password.addEventListener('input', function(){
+                let passwordRegex = RegExp("^(?=.*\\d)(?=.*[A-Z])(?=.*\\W)(?!.*\\W\\w*\\W)(?!.*\\s).{8,}$");
+                if(passwordRegex.test(password.value))
+                passwordError.textContent="";
+                else passwordError.textContent = "Invalid Password";
+            });
+            
         </script>
     </body>
